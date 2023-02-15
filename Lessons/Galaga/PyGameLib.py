@@ -8,10 +8,10 @@ import pymysql.cursors
 
 try:
     connection = pymysql.connect(
-        host='localhost',
-        user='Gv3d0n',
-        password='qwerty',
-        database='game_score'
+        host='*****',
+        user='*****',
+        password='*****',
+        database='*****'
     )
     print('Oh yeah mister crabs')
 except Exception as ex:
@@ -156,7 +156,7 @@ def collide_enemies():
                 f"update high_scores set scores = ('{Constants.game_score}') where name = ('{Constants.nickname}')"
             cursor.execute(player_score)
             connection.commit()
-            cursor.execute("""select * from high_scores;""")
+            cursor.execute("""select * from *****;""")
             print(cursor.fetchall())
         pause()
 
@@ -190,10 +190,10 @@ def menu_background():
 
                     with connection.cursor() as cursor:
                         cursor.execute("""show tables""")
-                        player_name = f"insert into high_scores (name, scores) value ('{Constants.nickname}', 0)"
+                        player_name = f"insert into ***** (name, scores) value ('{Constants.nickname}', 0)"
                         cursor.execute(player_name)
                         connection.commit()
-                        cursor.execute("""select * from high_scores;""")
+                        cursor.execute("""select * from *****;""")
                         print(cursor.fetchall())
 
                     is_input_used = False
